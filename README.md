@@ -14,7 +14,3 @@ A princípio o projeto não precisa de instalações, apenas utilização e conh
 ## Uso
 
 A utilização do repositório se destina a equipe do autoplay para padronização das telas conforme contextos, e melhor compartilhamento de código.
-
-```bash
-exemplo caso tenha código para copiar
-```
