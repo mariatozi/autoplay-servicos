@@ -1,6 +1,6 @@
 # Projeto Exodus - Autoplay
 
-Esse repositório foi criado para guardar os códigos referente a criação das telas e estilização dos modelos do projeto de atendimento da equipe de serviços do programa autoplay.
+Esse repositório foi criado para compartilhamento dos códigos referente a criação das telas e estilização dos modelos do projeto de atendimento da equipe de serviços do programa autoplay. Bem como com finalidade de padronização de desenvolvimento.
 
 ## Índice
 
