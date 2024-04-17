@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/logo-Autoglass-RGB.svg" type="image/x-icon">
+    <title>Lista de Atendimentos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script>
+        function mascaraCPF(cpf) {
+            cpf = cpf.replace(/\D/g, ''); //Remove caracteres não numéricos
+            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); //Adiciona ponto após os primeiros 3 dígitos
+            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); //Adiciona ponto após os próximos 3 dígitos
+            cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); //Adiciona hífen e os últimos 2 dígitos
+            return cpf;
+        }
+
+        function validarCPF() {
+            var inputCPF = document.getElementById('validationCustomUsername');
+            if (inputCPF.value.length <= 14) {
+                inputCPF.value = mascaraCPF(inputCPF.value);
+            }
+            else {
+                inputCPF.value = inputCPF.value.slice(0, 14);
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #E7EAF4;
+        }
+
+        .custom-card:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .custom-card:active {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md fixed-top m-0 p-0" style="background-color: #183884;">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center">
+                    <a href="!#" style="text-decoration: none;">
+                        <button type="button" class="btn btn-primary border-0 nav-principal"><img
+                                src="./assets/portal-exodus.png" alt=""></button>
+                    </a>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row justify-content-center mt-0">
+                        <div class="col-md-4">
+                            <form class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-primary border-0 nav-principal">Início</button>
+                                <div class="input-group ms-3">
+                                    <input class="form-control custom-search-input" type="search"
+                                        placeholder="Pesquisar..." aria-label="Search">
+                                    <button class="btn custom-search-input ml-2" type="submit"><i class="bi bi-search"
+                                            style="color: #183884;"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" style="color: white;" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Olá, MARIA LUIZA ASSUMPCAO TOZI
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    </main>
+    <div class="d-flex flex-column-fluid py-5">
+        <div class="container-fluid m-3">
+            <div class="card card-custom border-0 gutter-b mt-4" style="box-shadow:0 5px rgba(177, 177, 177, 0.5);">
+                <div class="card-header" style="background-color: white;">
+                    <div class="card-title d-flex align-items-center">
+                        <span class="card-icon">
+                            <i class="bi bi-funnel-fill p-3" style="color: dimgray;"></i>
+                        </span>
+                        <h3 class="card-label m-0 mt-1" style="font-size: 20px;">Filtros
+                            <h1 class="m-0 mx-2 mt-2" style="color: darkgrey; font-size: 14px;">Filtros disponíveis para
+                                esta busca</h1>
+                        </h3>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0 m-2">
+                            <div class="row g-3 needs-validation" novalidate>
+                                <label for="tituloInput" style="font-size: 16px;">Atendimentos</label>
+                                <div class="form-check col-md-2">
+                                    <input type="radio" class="form-check-input" name="flexRadioDefault"
+                                        id="flexRadioDefaultUm">
+                                    <label class="form-check-label" for="flexRadioDefaultUm"
+                                        style="font-size: 16px;">Meus</label>
+                                </div>
+
+                                <div class="form-check col-md-2">
+                                    <input type="radio" class="form-check-input" name="flexRadioDefault"
+                                        id="flexRadioDefaultDois">
+                                    <label class="form-check-label" for="flexRadioDefaultDois"
+                                        style="font-size: 16px;">Todos</label>
+                                </div>
+
+                                <div class="col-md-2 mt-0">
+                                    <label for="txtData" class="form-label" style="font-size: 16px;">Data Inicial
+                                        Abertura</label>
+                                    <input type="date" id="txtData" name="data" class="form-control" required>
+                                    <div class="invalid-feedback">Por favor, selecione uma data válida.</div>
+                                </div>
+
+                                <div class="col-md-2 mt-0">
+                                    <label for="validationCustom01" class="form-label"
+                                        style="font-size: 16px;">Atendimento</label>
+                                    <input type="text" class="form-control" style="width: 100%;" id="validationCustom01"
+                                        required>
+                                    <div class="invalid-feedback">Por favor, selecione uma data válida.</div>
+                                </div>
+
+                                <div class="col-md-2 mt-0">
+                                    <label for="validationCustom02" class="form-label"
+                                        style="font-size: 16px;">Placa</label>
+                                    <input type="text" class="form-control" style="width: 100%;" id="validationCustom02"
+                                        required>
+                                </div>
+
+                                <div class="col-md-2 mt-0">
+                                    <label for="validationCustom02" class="form-label"
+                                        style="font-size: 16px;">Situação</label>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option style="font-size: 16px;">Ativo</option>
+                                        <option style="font-size: 16px;">Inativo</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-2 mt-3">
+                                    <label for="validationCustom02" class="form-label" style="font-size: 16px;">Nome
+                                        do
+                                        Titular</label>
+                                    <input type="text" class="form-control" style="width: 100%;" id="validationCustom02"
+                                        required>
+                                </div>
+
+                                <div class="col-md-4 mt-3">
+                                    <label for="validationCustomUsername" class="form-label"
+                                        style="font-size: 16px;">CPF/CNPJ
+                                        do Titular</label>
+                                    <div class="input-group has-validation">
+                                        <input type="text" class="form-control" id="validationCustomUsername"
+                                            aria-describedby="inputGroupPrepend" required onkeyup="validarCPF()">
+                                        <div class="invalid-feedback">
+                                            Por favor, insira um CPF válido.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="validationCustom01" class="form-label" style="font-size: 16px;">N°
+                                        Apólice</label>
+                                    <input type="text" class="form-control" style="width: 100%;" id="validationCustom01"
+                                        required>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="validationCustom01" class="form-label" style="font-size: 16px;">N°
+                                        Chassi 6 últimos dígitos</label>
+                                    <input type="text" class="form-control" style="width: 100%;" id="validationCustom01"
+                                        required>
+                                </div>
+                            </div>
+                        </blockquote>
+                    </div>
+
+                    <div class="card-footer d-flex justify-content-start" style="background-color: white;">
+                        <button type="button" class="btn mx-2 mt-2 mb-2"
+                            style="background-color: #183884; color: white; font-size: 0.90rem;"><i class="bi bi-search"
+                                style="color: white;"></i> Pesquisar</button>
+
+                        <button type="button" class="btn btn-light mx-2 mt-2 mb-2"
+                            style="color: #183884; font-size: 0.90rem; border-color: #183884;"><i
+                                class="bi bi-arrow-counterclockwise" style="color: #183884;"></i> Limpar
+                            Filtros</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card card-custom border-0 gutter-b mt-4" style="box-shadow:0 5px rgba(177, 177, 177, 0.5);">
+                <div class="card-header" style="background-color: white;">
+                    <div class="row align-items-center mt-2">
+                        <div class="col">
+                            <div class="card-title d-flex align-items-center">
+                                <span class="card-icon">
+                                    <i class="bi bi-exclamation-circle-fill p-3" style="color: dimgray;"></i>
+                                </span>
+                                <h3 class="card-label m-1 mt-1" style="font-size: 20px;">Resultados</h3>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="card-toolbar d-flex justify-content-end">
+                                <button type="button" class="btn mx-2 mt-2 mb-2"
+                                    style="background-color: #183884; color: white; font-size: 0.90rem;"><i
+                                        class="bi bi-plus-circle"></i> Novo Atendimento</button>
+                            </div>
+                        </div>
+                        <!-- resultados como tabela -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Atendimento</th>
+                                    <th scope="col">Placa</th>
+                                    <th scope="col">Apólice</th>
+                                    <th scope="col">Titular</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>MMM2805</td>
+                                    <td>8998899898</td>
+                                    <td>Maria Luiza Tozi</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>RTRT9999</td>
+                                    <td>8998989898</td>
+                                    <td>Rafael Ricarto</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>VBVB5656</td>
+                                    <td>8998989898</td>
+                                    <td>Marcos Faria</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>VBVB5656</td>
+                                    <td>8998989898</td>
+                                    <td>Vitoria Belshoff</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- grid com as informações do relatório -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
