@@ -1,0 +1,31 @@
+/* caso precise, ajustar de acordo com o projeto ou configuração */
+
+body {
+    --bege: #E6E0D6;
+    --azul-escuro: #0019fc;
+    --azul-claro: #4b6fe3;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+  }
+
+.navbar {
+    height: 60px; /* Definindo a altura desejada para o navbar -> usando */
+  }
+
+.nav-principal{
+    background-color: #183884; /* rever para colocar no bootstrap*/
+}
+
+.custom-card {
+    background-color: #183884; /* Define a cor de fundo como azul */
+    color: white; /* Define a cor do texto como branco */
+    border: none; /* Remove a borda (se houver) */
+}
+
+  .custom-search-input {
+    background-color: white; /* Cor de fundo azul transparente */
+    border: none; /* Remover a borda */
+    color: white; /* Cor do texto como branco */
+    padding: 0.375rem 0.75rem; /* Padding interno para o campo */
+    border-radius: 0.25rem; /* Borda arredondada */
+}
