@@ -1,6 +1,6 @@
-# autoplay-servicos
+# Projeto Exodus - Autoplay
 
-Breve descrição do projeto.
+Esse repositório foi criado para guardar os códigos referente a criação das telas e estilização dos modelos do projeto de atendimento da equipe de serviços do programa autoplay.
 
 ## Índice
 
@@ -11,7 +11,7 @@ Breve descrição do projeto.
 
 ## Instalação
 
-Descreva aqui como instalar ou configurar o seu projeto.
+A princípio o projeto não precisa de instalações, apenas utilização e conhecimento de HTML e CSS, bem como javascript para algumas funcionalidades solicitadas no projeto de integrações e mudanças.
 
 import { função } from 'meu-pacote';
 
